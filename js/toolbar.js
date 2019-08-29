@@ -4,12 +4,6 @@ var pad = 10;
 var menuItems;
 var menuButton = $("#menu_button")[0];
 var fillIn = $("#fill_in")[0];
-var zeLight = $("#ze_light")[0];
-var fade = $("#fade")[0];
-var per = 0;
-var croll = null;
-var isCalled = false;
-var modal = $("#modal_background")[0];
 
 $("#visitTswelopele").click(function(){
     window.open("https://tswelopelecpf.co.za");
@@ -30,6 +24,7 @@ $("#portfolioButton").click(function() {
         }, 1000);
     }
 });
+
 $("#webPortfolioButton").click(function() {
     page_url = window.location.href;
     page_id = page_url.substring(page_url.lastIndexOf("#") + 1);
@@ -39,6 +34,7 @@ $("#webPortfolioButton").click(function() {
         }, 1000);
     }
 });
+
 $("#androidPortfolioButton").click(function() {
     page_url = window.location.href;
     page_id = page_url.substring(page_url.lastIndexOf("#") + 1);
@@ -49,7 +45,6 @@ $("#androidPortfolioButton").click(function() {
     }
 });
 
-
 $("#aboutButton").click(function() {
     page_url = window.location.href;
     page_id = page_url.substring(page_url.lastIndexOf("#") + 1);
@@ -59,108 +54,6 @@ $("#aboutButton").click(function() {
         }, 1000);
     }
 });
-
-$("#floating_button").click(function() {
-    // modal.style.display = "block";
-    showModal();
-});
-$("#close_modal").click(function() {
-    // modal.style.display = "none";
-    showModal();
-});
-
-window.addEventListener("mousemove", function(e)
-{
-    if (e.y <= 400){
-        if (isCalled){
-            clearInterval(croll);
-            isCalled = false;
-        }
-        zeLight.style.display = "block";
-        zeLight.style.top = e.y + "px";
-        zeLight.style.left = e.x + "px";
-        per = getPercentage(e.x);
-        fade.style = "background-image: linear-gradient(" + getAngle(e.y) + "deg, #000000b5, #000000de, #28a74500 " + per + "%); padding-bottom: 40px; padding-right: 10%; padding-left: 10%; padding-top: 61px;";
-    }
-    else{
-        zeLight.style.display = "none";
-        if (!isCalled && per != 0){
-            isCalled = true;
-            crollBackIn();
-        }
-    }
-});
-
-function crollBackIn(){
-
-    croll = setInterval(crollBack, 10);
-
-    function crollBack(){
-
-        if (per < 90)
-        {
-            fade.style = "background-image: linear-gradient(" + 155 + "deg, #000000b5, #000000de, #28a74500 " + per + "%); padding-bottom: 40px; padding-right: 10%; padding-left: 10%; padding-top: 61px;";
-            per++;
-        }
-        else{
-            clearInterval(scroll);
-        }
-    }
-    if (per >= 90){
-        clearInterval(scroll);
-    }
-}
-
-function getAngle(y){
-    return (y/450) * 180;
-}
-
-function getPercentage(x)
-{
-    var w = window.innerWidth;
-    return (x/w) * 100;
-}
-
-function showModal()
-{
-    var modalBox = $("#modal")[0];
-    var count;
-
-    if (modal.style.display != "block")
-    {
-        bigger = setInterval(makeBigger, 5)
-        count = -50;
-    }
-    else{
-        smaller = setInterval(makeSmaller, 5)
-        count = 110;
-    }
-
-    function makeBigger(){
-
-        if (count <= 100){
-            modal.style.display = "block";
-            modalBox.style = "margin-top: " + count + "px; background-color: white; width: 50%; padding: 10px; border-radius: 10px; min-width: 330px; padding-bottom: 20px;";
-            count += 5;
-        }
-        else{
-            clearInterval(bigger);
-        }
-    }
-
-    function makeSmaller(){
-
-        if (count > -50){
-            modalBox.style = "margin-top: " + count + "px; background-color: white; width: 50%; padding: 10px; border-radius: 10px; min-width: 330px; padding-bottom: 20px;";
-            count -= 5;
-        }
-        else{
-            modal.style.display = "none";
-            clearInterval(smaller);
-        }
-    }
-}
-
 
 function showMenu()
 {
