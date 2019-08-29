@@ -128,20 +128,20 @@ function showModal()
 
     if (modal.style.display != "block")
     {
-        bigger = setInterval(makeBigger, 7)
-        count = 0;
+        bigger = setInterval(makeBigger, 5)
+        count = -50;
     }
     else{
-        smaller = setInterval(makeSmaller, 7)
-        count = 20;
+        smaller = setInterval(makeSmaller, 5)
+        count = 110;
     }
 
     function makeBigger(){
 
-        if (count <= 15){
+        if (count <= 100){
             modal.style.display = "block";
-            modalBox.style = "margin-top: " + count + "%; background-color: white; width: 50%; padding: 10px; border-radius: 10px; min-width: 330px; padding-bottom: 20px;";
-            count++;
+            modalBox.style = "margin-top: " + count + "px; background-color: white; width: 50%; padding: 10px; border-radius: 10px; min-width: 330px; padding-bottom: 20px;";
+            count += 5;
         }
         else{
             clearInterval(bigger);
@@ -150,9 +150,9 @@ function showModal()
 
     function makeSmaller(){
 
-        if (count > 0){
-            modalBox.style = "margin-top: " + count + "%; background-color: white; width: 50%; padding: 10px; border-radius: 10px; min-width: 330px; padding-bottom: 20px;";
-            count--;
+        if (count > -50){
+            modalBox.style = "margin-top: " + count + "px; background-color: white; width: 50%; padding: 10px; border-radius: 10px; min-width: 330px; padding-bottom: 20px;";
+            count -= 5;
         }
         else{
             modal.style.display = "none";
