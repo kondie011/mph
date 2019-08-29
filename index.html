@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>MPH</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width = device-width, initial-scale = 1">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<link rel="shortcut icon" href="./images/mph_icon.png" type="image/x-icon">
+		<link rel="stylesheet" href="stylesheet/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</head>
+ 
+	<body>
+		<div id="ze_light"></div>
+		<div id="floating_button">
+			<h1 class="header2" style="font-size: 15px; color: white; margin: 10px;">FEEDBACK</h1>
+		</div>
+		<div id="modal_background">
+			<div id="modal">
+				<img src="./images/cross_icon.png" alt="close" style="width: 40px; cursor: pointer;" id="close_modal">
+				<h1 class="header2" style="">FILL IN THE FORM</h1>
+				<!-- <div class="underline" style="width: 50%;"></div> -->
+				<div>
+					<form style="line-height: 7; font-size: 1.6em; font-family: sans-serif;">
+						<!-- <label for="comment">Comment: </label> -->
+						<textarea class="modelInput" id="comment" placeholder="Feedback" style="height: 100px; line-height: 1;"></textarea>
+						<br>
+						<!-- <label for="email">Email: </label> -->
+						<input class="modelInput" placeholder="Email(Optional)" type="text" id="email">
+					</form>
+					<button id="send_feedback" style="font-size: 16px; color: white; padding: 8px; background-image: linear-gradient(45deg, #3c763d, #28a745); border-radius: 5px;" class="header2">SUBMIT</button>
+				</div>
+			</div>
+		</div>
+
+		<div style="border-radius: 0px; margin: 0px; height: 175px; position: fixed; width: 175px; z-index: 5; top: 0px; background-image: linear-gradient(90deg, #28a745, #007bff);; transform: rotate(45deg); top: -100px; left: -101px;">
+		</div>
+		<img id="menu_button" onclick="showMenu()" src="./images/menu.png" alt="menu" style="width: 40px; cursor: pointer; transform: rotate(0deg); z-index: 5;; position: fixed; top: 10px; left: 10px;">
+		<div id="fill_in"></div>
+		<div id="menu_items">
+			<a class="menu_item" href="view/contacts.html">CONTACTS</a>
+			<a id="aboutButton" class="menu_item">ABOUT</a>
+			<a id="portfolioButton" class="menu_item">PORTFOLIO</a>
+		</div>
+	<div class="page_lay">
+		
+		<div id="page_" style="padding-top: 10px;">
+			<div id="page_content">
+				<div id="fade">
+					<img src="./images/mph_icon.png" alt="" style="width: 230px">
+					<div class="line"></div>
+					<p class="webdesc">Website design</p>
+					<p class="webdesc">Android app dev</p>
+				</div>
+			</div>
+			<!-- <div id="triangle_cut"></div> -->
+			<div id="about">
+		
+				<!-- <div class="register-left" >
+					<img style="width: 50px; margin: 0px;" src="https://www.bricks4kidz.com.au/perth-karrinyup/wp-content/uploads/sites/37/2016/10/2000px-Double_angle_down_font_awesome.svg_.png" alt="Scroll down"/>            
+				</div> -->
+		
+				<h1 class="header2">ABOUT</h1>   
+				<div class="design" style="background-image: linear-gradient(45deg, #683c76, blue);">
+					<img src="./images/web_icon.png" alt="" class="design_image">
+					<h1>WEBSITE</h1>
+					<p>design</p>
+					<a id="webPortfolioButton" class="buttonStyle">VIEW PORTFOLIO</a>
+				</div>
+				<div class="design" style="background-image: linear-gradient(45deg, blue, darkcyan);">
+					<img src="./images/mobile_icon.png" alt="" class="design_image">
+					<h1>ANDROID</h1>
+					<p>design</p>
+					<a id="androidPortfolioButton" class="buttonStyle">VIEW PORTFOLIO</a>
+				</div>
+
+				<div style="margin-top: 30px;">
+					<div class="textStyle">
+						<h1 class="header2" style="margin-bottom: 15px;">MISSION</h1>
+						<div class="underline" style="width: 50%;"></div>
+						<div class="actualText">
+							<ol>
+								<li>To render affordable Website and Applications(Apps) designs services to our clients,in particular businesses and Organization.</li>
+							</ol>
+						</div>
+					</div>
+					<div class="textStyle">
+						<h1 class="header2" style="margin-bottom: 15px;">VISION</h1>
+						<div class="underline" style="width: 50%;"></div>
+						<div class="actualText">
+							<ol>
+								<li>To bridge the technological gab between consumers and business in South Africa.</li>
+								<li>To normalise online transaction and businesses in Sub Saharan Africa.</li>
+							</ol>
+						</div>
+					</div>
+					<div class="textStyle">
+						<h1 class="header2" style="margin-bottom: 15px;">SERVICES</h1>
+						<div class="underline" style="width: 50%;"></div>
+						<div class="actualText">
+							<ol>
+								<li>website design.</li>
+								<li>Applications(App) Design.</li>
+								<li>Search Engine Optimization.</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+
+				<div>
+					<h1 id="webPortfolio" class="header2">WEBSITE PORTFOLIO</h1> 
+					<div class="portfolio" style="background-image: url('./images/tswelopele.png');">
+						<!-- <img src="./images/wallpaper_4.jpg" alt="tswelepele website" class="portfolio_pic"> -->
+						<div class="portfolio_txt">
+							<h1>Tswelopele</h1>
+							<button id="visitTswelopele" class="buttonStyle">Visit website</button>
+						</div>
+					</div>
+				</div>
+				<div>
+					<h1 id="androidPortfolio" class="header2">ANDROID PORTFOLIO</h1> 
+					<div class="portfolio" style="background-image: url('./images/trendies.png');">
+						<!-- <img src="./images/wallpaper_4.jpg" alt="tswelepele website" class="portfolio_pic"> -->
+						<div class="portfolio_txt">
+							<h1>Trendies</h1>
+							<button id="downloadTrendies" class="buttonStyle">Download app</button>
+						</div>
+					</div>
+					<div class="portfolio" style="background-image: url('./images/lapoza.png');">
+						<!-- <img src="./images/wallpaper_4.jpg" alt="tswelepele website" class="portfolio_pic"> -->
+						<div class="portfolio_txt">
+							<h1>Lapoza</h1>
+							<button id="downloadLapoza" class="buttonStyle">Download app</button>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<hr class="my-4">
+	<div id="footer">
+	<p style="display: inline-block;">Provided to you by MPH</p>
+	<p style="display: inline-block; float: right;">2019</p>
+	</div>
+	<script src="./js/toolbar.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	</body>
+</html>
