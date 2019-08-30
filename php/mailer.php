@@ -1,7 +1,14 @@
 <?php 
     $msg = $_POST['msg'];
     $email = $_POST['email'];
-    sendEmail("www.kondie@live.com", $msg + ". Email: " + $email, "Feedback");
+    $str = "";
+    if ($email == ""){
+        $str = $msg;
+    }
+    else{
+        $str = $msg.". Email: ".$email;
+    }
+    sendEmail("www.kondie@live.com", $str, "Feedback");
     
     function sendEmail($to, $msg, $sbj) {
         ini_set('display_errors', 1);
@@ -10,6 +17,5 @@
         $header = "From:" . $from;
 
         mail($to, $sbj, $msg, $header);
-        echo "Done.";
     } 
 ?>

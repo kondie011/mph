@@ -55,14 +55,14 @@ function sendEmailUsingPhp()
         },
       success: function (results)
       {
-        console.log("it worked: " + results);
+        // console.log("it worked: " + results);
         showModal();
       },
       failure: function (result){
-        console.log("That did not work: " + results);
+        // console.log("That did not work: " + results);
       }
       }).done(function(response) {
-        console.log(response);
+        // console.log(response);
       });
   }
   else{

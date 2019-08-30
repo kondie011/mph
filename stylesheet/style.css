@@ -323,6 +323,7 @@ body{
 .focial_media_icon{
     width: 40px;
     margin: 10px;
+    cursor: pointer;
 }
 /* #welcome_message{} */
 #icon{
