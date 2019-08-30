@@ -1,6 +1,6 @@
 var modal = $("#modal_background")[0];
 
-$("#send_feedback").click(sendEmail)
+$("#send_feedback").click(sendEmailUsingPhp)
 
 $("#floating_button").click(function() {
   // modal.style.display = "block";
@@ -13,57 +13,61 @@ $("#close_modal").click(function() {
 
 // $(window).click(showModal);
 
-function sendEmail(){
-  $.ajax({
-      type: "POST",
-      url: "https://mandrillapp.com/api/1.0/messages/send.json",
-      data: {
-        "key": "9f0e83417200f3f3fc585e170fbec53c-us4",
-        "message": {
-          "from_email": "knedzing@student.wethinkcode.co.za",
-          "to": [
-              {
-                "email": "www.kondie@live.com",
-                "name": "kondelelani",
-                "type": "to"
-              }
-            ],
-          "autotext": "true",
-          "subject": "Test",
-          "html": "<h1>IT WORKS</h1>"
-        }
-      }
-      }).done(function(response) {
-        console.log(response); // if you're into that sorta thing
-      });
-      sendEmailUsingPhp();
-  showModal();
-}
+// function sendEmail(){
+//     $.ajax({
+//         type: "POST",
+//         url: "https://mandrillapp.com/api/1.0/messages/send.json",
+//         data: {
+//           'key': "9f0e83417200f3f3fc585e170fbec53c-us4",
+//           'message': {
+//             'from_email': "www.kondie@live.com",
+//             'to': [
+//                 {
+//                   'email': "knedzing@student.wethinkcode.co.za",
+//                   'name': "KONDIE",
+//                   'type': 'to'
+//                 }
+//               ],
+//             'autotext': 'true',
+//             'subject': "Test",
+//             'html': "This is my email to you: if you are reading this it works"
+//           }
+//         }
+//        }).done(function(response) {
+//          console.log(response); // if you're into that sorta thing
+//        });
+//   showModal();
+// }
 
 function sendEmailUsingPhp()
 {
-  $.ajax({
-    type: "POST",
-    url: "./php/mailer.php",
-    data: {
-      "key": "9f0e83417200f3f3fc585e170fbec53c-us4",
-      "message": {
-        "from_email": "knedzing@student.wethinkcode.co.za",
-        "to": [
-            {
-              "email": "www.kondie@live.com",
-              "name": "kondelelani",
-              "type": "to"
-            }
-          ],
-        "autotext": "true",
-        "subject": "Test",
-        "html": "<h1>IT WORKS</h1>"
+  var msg = $("#comment").val();
+  var email = $("#email").val();
+  if (msg != "")
+  {
+    console.log(msg);
+    $.ajax({
+      type: "POST",
+      url: "./php/mailer.php",
+      data: {
+        "msg": msg,
+        "email": email
+        },
+      success: function (results)
+      {
+        console.log("it worked: " + results);
+        showModal();
+      },
+      failure: function (result){
+        console.log("That did not work: " + results);
       }
-    }
-    }).done(function(response) {
-      console.log(response); // if you're into that sorta thing
-    });
+      }).done(function(response) {
+        console.log(response);
+      });
+  }
+  else{
+    alert("No message");
+  }
 }
 
 function showModal()
