@@ -14,6 +14,18 @@ $("#downloadTrendies").click(function(){
 $("#downloadLapoza").click(function(){
     window.open("https://play.google.com/store/apps/details?id=com.kondie.lapoza&hl=en_ZA");
 });
+$("#to_twitter_f").click(function(){
+    window.open("https://twitter.com/Kondie101");
+});
+$("#to_twitter_c").click(function(){
+    window.open("https://twitter.com/Kondie101");
+});
+$("#to_fb_f").click(function(){
+    window.open("https://www.facebook.com/kondie101");
+});
+$("#to_fb_c").click(function(){
+    window.open("https://www.facebook.com/kondie101");
+});
 
 $("#portfolioButton").click(function() {
     page_url = window.location.href;
