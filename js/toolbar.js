@@ -35,6 +35,7 @@ $("#portfolioButton").click(function() {
             scrollTop: $("#webPortfolio").offset().top
         }, 1000);
     }
+    showMenu();
 });
 
 $("#servicesButton").click(function() {
@@ -45,6 +46,7 @@ $("#servicesButton").click(function() {
             scrollTop: $("#services").offset().top
         }, 1000);
     }
+    showMenu();
 });
 
 $("#webPortfolioButton").click(function() {
@@ -75,6 +77,7 @@ $("#aboutButton").click(function() {
             scrollTop: $("#about").offset().top
         }, 1000);
     }
+    showMenu();
 });
 
 function showMenu()

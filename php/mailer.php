@@ -9,6 +9,7 @@
         $str = $msg.". Email: ".$email;
     }
     sendEmail("www.kondie@live.com", $str, "Feedback");
+    sendEmail("contact@mphservices.co.za", $str, "Feedback");
     
     function sendEmail($to, $msg, $sbj) {
         ini_set('display_errors', 1);
